@@ -1,0 +1,1 @@
+project = "gd-gcp-internship-devops"
