@@ -16,10 +16,21 @@ resource "google_compute_network" "vpc" {
   name = "bdelic-terraform-vpc"
 }
 
+resource "google_compute_firewall" "firewall" {
+  name = "bdelic-terraform-firewall"
+  network = google_compute_network.vpc.name
+  source_ranges = ["0.0.0.0/0"]
+  allow {
+    protocol = "tcp"
+    ports = ["22", "80", "8080", "443"]
+  }
+}
+
 resource "google_compute_instance" "vm" {
   name = "bdelic-terraform-instance"
   machine_type = "e2-micro"
   zone = var.zone
+  metadata_startup_script = file(var.startup_script)
 
   boot_disk {
     initialize_params {
