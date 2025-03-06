@@ -46,8 +46,7 @@ resource "google_compute_firewall" "default_firewall" {
   }
 }
 
-
-// VM
+// VMs
 
 resource "google_compute_instance" "temp_vm" {
   name = "bdelic-terraform-instance"
@@ -63,8 +62,6 @@ resource "google_compute_instance" "temp_vm" {
   }
   network_interface {
     subnetwork = google_compute_subnetwork.subnet.self_link
-    access_config {
-    }
   }
 }
 
@@ -91,6 +88,7 @@ resource "google_compute_instance_template" "instance_template" {
   name = "bdelic-terraform-instance-template"
   machine_type = "e2-micro"
   tags = ["allow-health-check"]
+  metadata_startup_script = file(var.instance_group_startup_script)
   depends_on = [ google_compute_snapshot.snapshot ]
   disk {
     source_image = google_compute_image.snapshot_image.self_link
@@ -98,8 +96,6 @@ resource "google_compute_instance_template" "instance_template" {
   } 
   network_interface {
     subnetwork = google_compute_subnetwork.subnet.self_link
-    access_config {
-    }
   }
 }
 
@@ -117,6 +113,8 @@ resource "google_compute_instance_group_manager" "instance_group_manager" {
     port = 80
   }
 }
+
+// LOAD BALANCER
 
 resource "google_compute_firewall" "healthcheck_firewall" {
   name = "bdelic-terraform-healthcheck-firewall"
