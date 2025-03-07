@@ -1,3 +1,5 @@
 project = "gd-gcp-internship-devops"
-startup_script = "./startup_script.sh"
-instance_group_startup_script = "./instance_group_startup_script.sh"
+
+vpc = "bdelic-tf-vpc"
+subnet = "bdelic-tf-subnet"
+firewall = "bdelic-tf-default-fw"

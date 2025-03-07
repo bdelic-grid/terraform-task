@@ -15,12 +15,17 @@ variable "zone" {
   type = string
 }
 
-variable "startup_script" {
-  description = "Path to startup script for VMs"
+variable "vpc" {
+  description = "Name of the VPC"
   type = string
 }
 
-variable "instance_group_startup_script" {
-  description = "Path to startup script for VMs in the instance group"
+variable "subnet" {
+  description = "The name of the subnet"
+  type = string
+}
+
+variable "firewall" {
+  description = "The name of the firewall"
   type = string
 }
