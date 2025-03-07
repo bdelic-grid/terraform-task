@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "healthcheck_firewall" {
-  name = var.healthcheck_firewall
-  network = var.vpc_id
+  name          = var.healthcheck_firewall
+  network       = var.vpc_id
   source_ranges = var.source_ranges
   target_tags   = ["allow-health-check"]
   allow {
@@ -10,7 +10,7 @@ resource "google_compute_firewall" "healthcheck_firewall" {
 }
 
 resource "google_compute_global_address" "load_balancer_ip" {
-  name = var.lb_ip
+  name       = var.lb_ip
   ip_version = var.ip_version
 }
 
