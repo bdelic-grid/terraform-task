@@ -4,15 +4,15 @@ variable "project" {
 }
 
 variable "region" {
-  default     = "us-central1"
   description = "Region of the project"
   type        = string
+  default     = "us-central1"
 }
 
 variable "zone" {
-  default     = "us-central1-a"
   description = "Zone of the project"
   type        = string
+  default     = "us-central1-a"
 }
 
 variable "vpc" {
@@ -21,11 +21,11 @@ variable "vpc" {
 }
 
 variable "subnet" {
-  description = "The name of the subnet"
+  description = "Name of the subnet"
   type        = string
 }
 
 variable "firewall" {
-  description = "The name of the firewall"
+  description = "Name of the default firewall"
   type        = string
 }
