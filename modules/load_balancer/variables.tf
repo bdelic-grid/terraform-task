@@ -1,7 +1,7 @@
 variable "healthcheck_firewall" {
   description = "Name of the healthcheck firewall"
   type        = string
-  default     = "bdelic-terraform-healthcheck-firewall"
+  default     = "bdelic-tf-healthcheck-firewall"
 }
 
 variable "vpc_id" {
@@ -18,7 +18,7 @@ variable "source_ranges" {
 variable "lb_ip" {
   description = "Name of the static load balancer IP"
   type        = string
-  default     = "bdelic-lb-ip"
+  default     = "bdelic-tf-lb-ip"
 }
 
 variable "ip_version" {
@@ -30,36 +30,36 @@ variable "ip_version" {
 variable "healthcheck" {
   description = "Name of the healthcheck"
   type        = string
-  default     = "bdelic-http-basic-check"
+  default     = "bdelic-tf-http-basic-check"
 }
 
 variable "backend" {
   description = "Name of the backend"
   type        = string
-  default     = "bdelic-backend"
+  default     = "bdelic-tf-backend"
 }
 
 variable "instance_group_manager_instance_group" {
-  description = "value"
+  description = "Instance group inside the instance group manager"
   type        = string
 }
 
 variable "url_map" {
   description = "Name of the URL map"
   type        = string
-  default     = "bdelic-map"
+  default     = "bdelic-tf-map"
 }
 
 variable "proxy" {
   description = "Name of the HTTP proxy"
   type        = string
-  default     = "bdelic-http-lb-proxy"
+  default     = "bdelic-tf-http-lb-proxy"
 }
 
 variable "forwarding_rule" {
   description = "Name of the forwarding rule"
   type        = string
-  default     = "bdelic-http-content-rule"
+  default     = "bdelic-tf-http-content-rule"
 }
 
 variable "port_range" {
@@ -70,5 +70,5 @@ variable "port_range" {
 
 variable "security_policy_id" {
   description = "ID of the security policy"
-  type = string
+  type        = string
 }

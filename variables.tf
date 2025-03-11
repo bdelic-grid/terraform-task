@@ -32,5 +32,5 @@ variable "firewall" {
 
 variable "policy" {
   description = "Name of the policy"
-  type = string
+  type        = string
 }

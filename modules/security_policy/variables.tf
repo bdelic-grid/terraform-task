@@ -1,4 +1,4 @@
 variable "policy" {
-  description = "Name of the policy"
-  type = string
+  description = "Name of the security policy"
+  type        = string
 }
