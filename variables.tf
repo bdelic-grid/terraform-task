@@ -32,5 +32,9 @@ variable "firewall" {
 
 variable "policy" {
   description = "Name of the policy"
+<<<<<<< HEAD
   type        = string
+=======
+  type = string
+>>>>>>> 9b22645 ([add] basic ip filtering)
 }
