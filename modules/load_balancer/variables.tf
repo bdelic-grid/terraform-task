@@ -67,3 +67,8 @@ variable "port_range" {
   type        = string
   default     = "80-80"
 }
+
+variable "security_policy_id" {
+  description = "ID of the security policy"
+  type = string
+}

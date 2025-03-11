@@ -29,3 +29,8 @@ variable "firewall" {
   description = "Name of the default firewall"
   type        = string
 }
+
+variable "policy" {
+  description = "Name of the policy"
+  type = string
+}
