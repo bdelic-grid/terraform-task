@@ -1,5 +1,5 @@
 resource "google_compute_security_policy" "policy" {
-  name = "bdelic-tf-security-policy"
+  name = var.security_policy
 
   rule {
     description = "Allow traffic from my IPs"
@@ -24,6 +24,4 @@ resource "google_compute_security_policy" "policy" {
       }
     }
   }
-
-
 }

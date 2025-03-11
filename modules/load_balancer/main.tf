@@ -42,6 +42,8 @@ resource "google_compute_backend_service" "backend" {
     balancing_mode  = "UTILIZATION"
     capacity_scaler = 1.0
   }
+
+  security_policy = var.security_policy_id
 }
 
 resource "google_compute_url_map" "url_map" {

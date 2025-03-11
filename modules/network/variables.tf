@@ -9,7 +9,7 @@ variable "subnet" {
 }
 
 variable "firewall" {
-  description = "Name of the firewall"
+  description = "Name of the default firewall"
   type        = string
 }
 
@@ -20,7 +20,7 @@ variable "region" {
 }
 
 variable "ip_cidr_range" {
-  description = "Range of IPs for instance"
+  description = "Range of IPs for an instance"
   type        = string
   default     = "10.2.0.0/24"
 }
@@ -32,13 +32,13 @@ variable "stack_type" {
 }
 
 variable "source_ranges" {
-  description = "Source ranges for the firewall"
+  description = "Source ranges for the default firewall"
   type        = list(string)
   default     = ["0.0.0.0/0"]
 }
 
 variable "port_list" {
-  description = "List of enabled ports in the firewall"
+  description = "List of enabled ports in the default firewall"
   type        = list(string)
   default     = ["22", "80", "443", "8080"]
 }

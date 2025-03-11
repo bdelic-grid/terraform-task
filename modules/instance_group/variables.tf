@@ -7,7 +7,6 @@ variable "zone" {
 variable "snapshot" {
   description = "Name of the snapshot"
   type        = string
-  default     = "bdelic-terraform-snapshot"
 }
 
 variable "snapshot_source" {
@@ -18,19 +17,17 @@ variable "snapshot_source" {
 variable "image" {
   description = "Name of the image created from the snapshot"
   type        = string
-  default     = "bdelic-snapshot-image"
 }
 
 variable "instance_template" {
   description = "Name of the instance template"
   type        = string
-  default     = "bdelic-terraform-instance-template"
+  default     = "bdelic-tf-instance-template"
 }
 
 variable "machine_type" {
   description = "Type of machines in instance template"
   type        = string
-  default     = "e2-micro"
 }
 
 variable "instance_group_startup_script" {
@@ -40,20 +37,18 @@ variable "instance_group_startup_script" {
 }
 
 variable "subnet" {
-  description = "Subnet for the instances"
+  description = "Subnet for instances"
   type        = string
 }
 
 variable "instance_group_base_name" {
   description = "Base name of each instance in instance group"
   type        = string
-  default     = "bdelic-terraform-group-instance"
 }
 
 variable "instance_group" {
   description = "Name of the instance group"
   type        = string
-  default     = "bdelic-instance-group-manager"
 }
 
 variable "target_size" {
