@@ -1,4 +1,4 @@
-variable "security_policy" {
-  description = "Name of the security policy"
-  type        = string
+variable "policy" {
+  description = "Name of the policy"
+  type = string
 }

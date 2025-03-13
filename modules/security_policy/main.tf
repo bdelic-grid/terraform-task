@@ -1,5 +1,5 @@
 resource "google_compute_security_policy" "policy" {
-  name = var.security_policy
+  name = var.policy
 
   rule {
     description = "Allow traffic from my IPs"

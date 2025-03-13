@@ -69,6 +69,6 @@ variable "port_range" {
 }
 
 variable "security_policy_id" {
-  description = "ID of security policy"
-  type        = string
+  description = "ID of the security policy"
+  type = string
 }
