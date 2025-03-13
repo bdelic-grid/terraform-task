@@ -1,7 +1,7 @@
 variable "vm" {
   description = "Name of the temporary VM"
   type        = string
-  default     = "bdelic-tf-instance"
+  default     = "bdelic-terraform-instance"
 }
 
 variable "machine_type" {
