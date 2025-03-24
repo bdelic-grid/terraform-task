@@ -9,7 +9,7 @@ variable "subnet" {
 }
 
 variable "firewall" {
-  description = "Name of the firewall"
+  description = "Name of the default firewall"
   type        = string
 }
 

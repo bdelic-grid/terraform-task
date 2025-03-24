@@ -25,5 +25,5 @@ module "load_balancer" {
   source                                = "./modules/load_balancer"
   vpc_id                                = module.network.vpc_id
   instance_group_manager_instance_group = module.instance_group.instance_group_manager_instance_group
-  security_policy_id = module.security_policy.security_policy_id
+  security_policy_id                    = module.security_policy.security_policy_id
 }

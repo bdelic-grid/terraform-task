@@ -8,7 +8,7 @@ resource "google_compute_security_policy" "policy" {
     match {
       versioned_expr = "SRC_IPS_V1"
       config {
-        src_ip_ranges = ["82.117.193.213", "109.111.235.230"]
+        src_ip_ranges = var.source_ip_ranges
       }
     }
   }
