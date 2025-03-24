@@ -4,12 +4,14 @@ resource "google_compute_instance" "temp_vm" {
   zone                    = var.zone
   metadata_startup_script = file(var.startup_script)
   boot_disk {
-    auto_delete = false
     initialize_params {
       image = var.image
     }
   }
   network_interface {
     subnetwork = var.subnet
+    access_config {
+      
+    }
   }
 }
