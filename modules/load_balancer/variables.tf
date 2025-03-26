@@ -16,13 +16,13 @@ variable "source_ranges" {
 }
 
 variable "lb_ip" {
-  description = "Name of the static load balancer IP"
+  description = "Name of the load balancer static IP"
   type        = string
   default     = "bdelic-tf-lb-ip"
 }
 
 variable "ip_version" {
-  description = "Version of static load balancer IP"
+  description = "Version of load balancer static IP"
   type        = string
   default     = "IPV4"
 }
@@ -44,8 +44,13 @@ variable "instance_group_manager_instance_group" {
   type        = string
 }
 
+variable "security_policy_id" {
+  description = "ID of the security policy"
+  type        = string
+}
+
 variable "url_map" {
-  description = "Name of the URL map"
+  description = "Name of the URL mapping"
   type        = string
   default     = "bdelic-tf-map"
 }
@@ -66,9 +71,4 @@ variable "port_range" {
   description = "Port range for the forwarding rule"
   type        = string
   default     = "80-80"
-}
-
-variable "security_policy_id" {
-  description = "ID of the security policy"
-  type        = string
 }
