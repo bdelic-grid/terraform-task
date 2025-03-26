@@ -8,9 +8,16 @@ variable "subnet" {
   type        = string
 }
 
-variable "firewall" {
-  description = "Name of the default firewall"
+variable "ip_cidr_range" {
+  description = "Range of IPs for an instance"
   type        = string
+  default     = "10.2.0.0/24"
+}
+
+variable "stack_type" {
+  description = "Stack type for the subnet"
+  type        = string
+  default     = "IPV4_ONLY"
 }
 
 variable "region" {
@@ -19,16 +26,9 @@ variable "region" {
   default     = "us-central1"
 }
 
-variable "ip_cidr_range" {
-  description = "Range of IPs for instance"
+variable "firewall" {
+  description = "Name of the firewall"
   type        = string
-  default     = "10.2.0.0/24"
-}
-
-variable "stack_type" {
-  description = "Stack type for subnet"
-  type        = string
-  default     = "IPV4_ONLY"
 }
 
 variable "source_ranges" {

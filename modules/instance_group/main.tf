@@ -1,20 +1,10 @@
-resource "google_compute_snapshot" "snapshot" {
-  name        = var.snapshot
-  source_disk = var.snapshot_source
-}
-
-resource "google_compute_image" "snapshot_image" {
-  name            = var.image
-  source_snapshot = google_compute_snapshot.snapshot.self_link
-}
-
 resource "google_compute_instance_template" "instance_template" {
-  name                    = var.instance_template
-  machine_type            = var.machine_type
-  tags                    = ["allow-health-check"]
-  metadata_startup_script = file(var.instance_group_startup_script)
+  name         = var.instance_template
+  machine_type = var.machine_type
+  tags         = ["allow-health-check"]
+  metadata_startup_script = file("./instance_group_startup_script.sh")
   disk {
-    source_image = google_compute_image.snapshot_image.self_link
+    source_image = var.snapshot_image
     boot         = true
   }
   network_interface {

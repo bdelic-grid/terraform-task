@@ -33,3 +33,15 @@ variable "subnet" {
   type        = string
 }
 
+variable "snapshot" {
+  description = "Name of the snapshot"
+  type        = string
+  default     = "bdelic-tf-snapshot"
+}
+
+variable "snapshot_image" {
+  description = "Name of the image created from the snapshot"
+  type        = string
+  default     = "bdelic-tf-snapshot-image"
+}
+

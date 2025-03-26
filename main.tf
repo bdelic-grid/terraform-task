@@ -11,9 +11,10 @@ module "vm" {
 }
 
 module "instance_group" {
-  source          = "./modules/instance_group"
-  snapshot_source = module.vm.vm_disk
-  subnet          = module.network.subnet_id
+  source         = "./modules/instance_group"
+  subnet         = module.network.subnet_id
+  snapshot_image = module.vm.snapshot_image
+  depends_on     = [module.vm]
 }
 
 module "security_policy" {
